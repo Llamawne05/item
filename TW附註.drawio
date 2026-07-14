@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="第 1 页" id="Wcj6Ln9vpqm32Qr6VJ1F">
+    <mxGraphModel dx="1627" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="流程開始&lt;br&gt;(scripts.sh)" vertex="1">
+          <mxGeometry height="60" width="160" x="340" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;html=1;" value="SQL/download.py&lt;br&gt;查詢 TWN DB 取得待處理公司清單&lt;br&gt;產生 download.sh" vertex="1">
+          <mxGeometry height="60" width="280" x="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;html=1;" value="SQL/download.sh&lt;br&gt;批次下載財報 PDF&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="280" x="280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;html=1;" value="Python/delete_table.py&lt;br&gt;清空 txpdf 資料表" vertex="1">
+          <mxGeometry height="60" width="280" x="280" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-38" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZXDo1viy1CqvAuuulZCF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;html=1;" value="Python/convert_pdf_to_sql.py&lt;br&gt;pdfplumber 解析 PDF&amp;nbsp;→ 寫入 txpdf" vertex="1">
+          <mxGeometry height="60" width="280" x="280" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-43" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZXDo1viy1CqvAuuulZCF-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;PPE.py / EDA.py /&amp;nbsp; IP.py / OGL.py / OI.py / OR.py / FC.py&lt;br&gt;呼叫 Gemini API 進行解析&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="343.75" x="248.13" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-39" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ZXDo1viy1CqvAuuulZCF-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;html=1;" value="Python/xlsx_to_sql.py&lt;br&gt;欄位標準化、特殊情境補全" vertex="1">
+          <mxGeometry height="80" width="280" x="280.01" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-40" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="ZXDo1viy1CqvAuuulZCF-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-13" parent="1" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;html=1;" value="Python/cal_ACCVALUE.py&lt;br&gt;依規則計算並比照配碼表（update_acc_value.sql）&lt;br&gt;進行標準化配碼" vertex="1">
+          <mxGeometry height="90" width="260" x="290.02" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-16" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;" value="twpdf_detail&lt;br&gt;acc_value_table" vertex="1">
+          <mxGeometry height="70" width="200" x="320.02" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-17" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;" value="流程結束" vertex="1">
+          <mxGeometry height="50" width="160" x="340.01" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-18" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="ZXDo1viy1CqvAuuulZCF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-19" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="ZXDo1viy1CqvAuuulZCF-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-20" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="ZXDo1viy1CqvAuuulZCF-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-21" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="ZXDo1viy1CqvAuuulZCF-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-35" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="ZXDo1viy1CqvAuuulZCF-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-41" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;" value="twpdf_detail&lt;br&gt;tw_txpdf" vertex="1">
+          <mxGeometry height="70" width="130" x="660" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-42" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="ZXDo1viy1CqvAuuulZCF-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-44" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;" value="twpdf_detail&lt;br&gt;rev_missing_table" vertex="1">
+          <mxGeometry height="70" width="130" x="650" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="ZXDo1viy1CqvAuuulZCF-47" edge="1" parent="1" source="ZXDo1viy1CqvAuuulZCF-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="ZXDo1viy1CqvAuuulZCF-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
