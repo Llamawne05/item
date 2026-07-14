@@ -1,0 +1,142 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="財報配碼系統" id="0">
+    <mxGraphModel dx="2324" dy="1206" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cProc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#B3B3B3;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fontSize=13;fontStyle=1" value="處理步驟（main.py 依序執行）" vertex="1">
+          <mxGeometry height="600" width="300" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="cIO" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#D6B656;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fontSize=13;fontStyle=1" value="輸入 / 輸出資料" vertex="1">
+          <mxGeometry height="740" width="760" x="420" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cDown" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;verticalAlign=top;align=left;spacingLeft=12;spacingTop=8;fontSize=13;fontStyle=1" value="下游人工流程（非自動化，需人工操作 Excel）" vertex="1">
+          <mxGeometry height="300" width="280" x="460" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="main" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=13" value="main.py" vertex="1">
+          <mxGeometry height="40" width="160" x="110" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12" value="依序執行四步" vertex="1">
+          <mxGeometry height="80" width="120" x="130" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="step1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13" value="① split_pdf.py" vertex="1">
+          <mxGeometry height="50" width="220" x="80" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13" value="② gemini.py" vertex="1">
+          <mxGeometry height="50" width="220" x="80" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13" value="③ csv_to_sql.py" vertex="1">
+          <mxGeometry height="50" width="220" x="80" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="step4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=13" value="④ mapper.py" vertex="1">
+          <mxGeometry height="50" width="220" x="80" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="abort" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=13" value="中止" vertex="1">
+          <mxGeometry height="50" width="120" x="60" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="success" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13" value="完成：產出 JSON" vertex="1">
+          <mxGeometry height="50" width="180" x="220" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="pdfOld" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;boundedLbl=1" value="PDF_old" vertex="1">
+          <mxGeometry height="60" width="140" x="470" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="pdfNew" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;boundedLbl=1" value="PDF_new" vertex="1">
+          <mxGeometry height="60" width="140" x="470" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="csvOut" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=12" value="output/*.csv" vertex="1">
+          <mxGeometry height="50" width="150" x="470" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;boundedLbl=1" value="fin_report.db&#xa;（data 資料表）" vertex="1">
+          <mxGeometry height="70" width="150" x="470" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="accountTemplate" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12" value="account_template.xlsx" vertex="1">
+          <mxGeometry height="50" width="190" x="700" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="rootMapping" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=12" value="root_account_mapping.xlsx" vertex="1">
+          <mxGeometry height="50" width="200" x="960" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="jsonOut" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=12" value="{comp_id}_{annyymm}.json" vertex="1">
+          <mxGeometry height="50" width="180" x="470" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="xlsmPy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12" value="json_to_xlsm.py" vertex="1">
+          <mxGeometry height="50" width="200" x="500" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="manualUnlock" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12" value="人工解除保護（Excel 巨集）" vertex="1">
+          <mxGeometry height="50" width="200" x="500" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="xlsmUpdate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=12" value="更新 .xlsm 範本" vertex="1">
+          <mxGeometry height="50" width="200" x="500" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="decision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step2" value="成功">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="step2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step3" value="成功">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="step3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step4" value="成功">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="step4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="success" value="成功">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" edge="1" parent="1" source="step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;fontSize=11;strokeColor=#B85450" target="abort" value="失敗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" edge="1" parent="1" source="step2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;fontSize=11;strokeColor=#B85450" target="abort" value="失敗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" edge="1" parent="1" source="step3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0;fontSize=11;strokeColor=#B85450" target="abort" value="失敗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f4" edge="1" parent="1" source="step4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.8;entryY=0;entryDx=0;entryDy=0;fontSize=11;strokeColor=#B85450" target="abort" value="失敗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io1" edge="1" parent="1" source="pdfOld" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io2" edge="1" parent="1" source="step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="pdfNew">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io3" edge="1" parent="1" source="pdfNew" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io4" edge="1" parent="1" source="step2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="csvOut">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io5" edge="1" parent="1" source="csvOut" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io6" edge="1" parent="1" source="step3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io7" edge="1" parent="1" source="db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io8" edge="1" parent="1" source="accountTemplate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;fontSize=11" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io9" edge="1" parent="1" source="rootMapping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;fontSize=11" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="io10" edge="1" parent="1" source="step4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="jsonOut">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" edge="1" parent="1" source="jsonOut" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="xlsmPy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" edge="1" parent="1" source="xlsmPy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="manualUnlock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" edge="1" parent="1" source="manualUnlock" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11" target="xlsmUpdate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
