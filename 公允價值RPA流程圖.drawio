@@ -1,9 +1,111 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="第 1 页" id="mYms7sleSfXjZi0pisqV">
-    <mxGraphModel>
+  <diagram name="公允價值層級流程" id="fvFlow">
+    <mxGraphModel dx="1713" dy="888" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1300" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#E9EBEA;strokeColor=#333333;strokeWidth=2;fontColor=#222222;fontSize=13;fontStyle=1;" value="開始" vertex="1">
+          <mxGeometry height="50" width="160" x="420" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="init" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9EBEA;strokeColor=#9AA5A0;fontColor=#333333;fontSize=13;" value="參數設定 / 初始化" vertex="1">
+          <mxGeometry height="50" width="200" x="400" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="download" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCEEFB;strokeColor=#6C9BD1;fontColor=#1A3A52;fontSize=13;" value="下載財報 PDF" vertex="1">
+          <mxGeometry height="50" width="200" x="400" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="split" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5E6C8;strokeColor=#C9A227;fontColor=#4A3B0A;fontSize=13;" value="拆頁：正則比對" vertex="1">
+          <mxGeometry height="50" width="200" x="400" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="dec1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9AA5A0;fontColor=#333333;fontSize=12;" value="正則比對成功？" vertex="1">
+          <mxGeometry height="90" width="180" x="410" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="mQejFp0DKYrkX2-dJ8yd-2" edge="1" parent="1" source="aihelper" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="aiparse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="aihelper" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE3F7;strokeColor=#9B7FC7;fontColor=#3A2A52;fontSize=13;" value="AI 輔助定位頁碼" vertex="1">
+          <mxGeometry height="50" width="200" x="700" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="aiparse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE3F7;strokeColor=#9B7FC7;fontColor=#3A2A52;fontSize=13;" value="AI 解析（Gemini 抽取資料）" vertex="1">
+          <mxGeometry height="50" width="240" x="380" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="post" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCF3F0;strokeColor=#4FB3A4;fontColor=#0F3D36;fontSize=13;" value="後處理：金額取絕對值 / 日期正規化 / 細項合併 / 補齊未揭露期別" vertex="1">
+          <mxGeometry height="60" width="400" x="300" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="coding" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7E2DA;strokeColor=#D08161;fontColor=#5A2C17;fontSize=13;" value="配碼：依產業別套用規則轉內部代碼" vertex="1">
+          <mxGeometry height="60" width="260" x="370" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="dec2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9AA5A0;fontColor=#333333;fontSize=12;" value="執行結果" vertex="1">
+          <mxGeometry height="90" width="180" x="410" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="mQejFp0DKYrkX2-dJ8yd-4" edge="1" parent="1" source="rsuccess" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rsuccess" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DFF3E3;strokeColor=#4CAF6D;fontColor=#1E4D2B;fontSize=13;" value="成功" vertex="1">
+          <mxGeometry height="55" width="170" x="150" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="rnodata" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBF0DC;strokeColor=#E0A83A;fontColor=#5A4315;fontSize=13;" value="無資料" vertex="1">
+          <mxGeometry height="55" width="170" x="415" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="mQejFp0DKYrkX2-dJ8yd-5" edge="1" parent="1" source="rfail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rfail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE1E1;strokeColor=#E06666;fontColor=#5A1F1F;fontSize=13;" value="失敗" vertex="1">
+          <mxGeometry height="55" width="170" x="680" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7E1EC;strokeColor=#C9628F;fontColor=#5A1F3A;fontSize=13;" value="報表產出：依公司代號分流寫入 Excel&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="240" x="380" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="summary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9EBEA;strokeColor=#9AA5A0;fontColor=#333333;fontSize=13;" value="輸出轉檔結果統計" vertex="1">
+          <mxGeometry height="50" width="240" x="380" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#E9EBEA;strokeColor=#333333;strokeWidth=2;fontColor=#222222;fontSize=13;fontStyle=1;" value="結束" vertex="1">
+          <mxGeometry height="50" width="160" x="420" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="init">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="init" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="download">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="download" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="split">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="split" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="dec1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="dec1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4CAF6D;fontColor=#1E4D2B;" target="aiparse" value="是">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="dec1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9B7FC7;fontColor=#3A2A52;" target="aihelper" value="否">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="aiparse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="post">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="post" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="coding">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="coding" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="dec2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="dec2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#4CAF6D;fontColor=#1E4D2B;" target="rsuccess" value="成功">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="dec2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#E0A83A;fontColor=#5A4315;" target="rnodata" value="無資料">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="dec2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#E06666;fontColor=#5A1F1F;" target="rfail" value="失敗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="rnodata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="report" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="summary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="summary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
